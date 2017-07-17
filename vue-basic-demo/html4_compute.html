@@ -22,6 +22,7 @@
     <div>first name: <input type="text" v-model="firstname"/></div>
     <div>last name: <input type="text" v-model="lastname"/></div>
     <div>fullname: <input type="text" v-model="fullname"/></div>
+    <div>mutil handle <input type="text" v-model="list"></div>
 </div>
 <script src="lib/vue.js"></script>
 <script>
@@ -65,7 +66,8 @@
         data: {
             firstname: 'qiu',
             lastname: 'mumu',
-            fullname: 'qiu mumu'
+            fullname: 'qiu mumu',
+            list:[]
         },
         //更适合执行异步任务，复杂任务哈！
         watch: {
@@ -74,6 +76,16 @@
             },
             lastname: function () {
                 this.fullname = this.firstname + ' ' + this.lastname;
+            },
+            list:[function(){
+                console.log('list watch1'+ this.list);
+            },function(){
+                console.log('list watch2'+ this.list);
+            }, 'mywatch']
+        },
+        methods:{
+            mywatch:function(){
+                console.log('excute my watch', arguments);
             }
         }
     });

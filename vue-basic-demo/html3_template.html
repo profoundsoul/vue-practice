@@ -7,11 +7,11 @@
 <body>
 <div id="app">
     <div>
-        <div>{{text}}
+        <div>{{name}}--{{text}}
             <button @click="update">更新text值</button>
         </div>
         <div v-once>{{text}}</div>
-        <div v-bind:title="title">title v-bind:title测试</div>
+        <div v-bind:title="title" :data-title="title">title v-bind:title测试</div>
         <input type="text" :placeholder="phtext"/>
     </div>
     <div>
@@ -23,10 +23,11 @@
         v-bind
         v-on-->
 
-        <a href="http://www.baidu.com" v-on:click.prevent="link">啊啊啊啊啊啊</a>
+        <a href="http://www.baidu.com" v-on:click.prevent="link" @mouseover="over">啊啊啊啊啊啊</a>
         <div><span>日期</span>{{startDate | formatYMD}}</div>
         <div><span>字母</span>{{word | uppercase}}</div>
     </div>
+    <input type="submit" value="提交">
 </div>
 <script src="lib/vue.js"></script>
 <script>
@@ -49,6 +50,7 @@
     var vm = new Vue({
         el:'#app',
         data:{
+            name: 'template',
             text:'1111',
             title:'提示',
             phtext:'请输入中文！',
@@ -62,6 +64,9 @@
             },
             link:function(){
                 console.log('挑战！');
+            },
+            over:function(){
+                console.log('over!');
             }
         },
         filters:{

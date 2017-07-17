@@ -9091,7 +9091,7 @@ var mount = Vue$3.prototype.$mount;
 Vue$3.prototype.$mount = function (
   el,
   hydrating
-) {
+) {debugger;
   el = el && query(el);
 
   /* istanbul ignore if */
