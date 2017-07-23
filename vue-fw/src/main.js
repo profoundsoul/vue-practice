@@ -2,14 +2,19 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 import router from './router'
+import FastClick from 'fastclick';
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
+Vue.use(VueAxios, axios);
 
+FastClick.attach(document.body);
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
   template: '<App/>',
   components: { App }
-})
+});
