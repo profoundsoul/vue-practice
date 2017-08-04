@@ -1,15 +1,61 @@
 <template>
   <div>
-    <h1>欢迎来到主页</h1>
-    <router-link to="/list">列表页面</router-link>
+    <div v-if="!loading">
+      <h1>欢迎来到主页</h1>
+      <router-link to="/list">列表页面</router-link>
+    </div>
+
+    <div v-else>
+      <div class="mask" >
+      </div>
+      <!--<ClipLoader class="middle" :loading="loading"></ClipLoader>-->
+      <RotateLoader class="middle" :loading="loading"></RotateLoader>
+    </div>
   </div>
+
 </template>
 <script>
+  import ClipLoader from 'vue-spinner/src/ClipLoader.vue'
+  import PulseLoader from 'vue-spinner/src/PulseLoader'
+  import RotateLoader from 'vue-spinner/src/RotateLoader'
+
   export default {
     data(){
       return {
-        title:'主页！'
+        title: '主页！',
+        loading: true
       }
+    },
+    components:{
+      ClipLoader,
+      PulseLoader,
+      RotateLoader
+    },
+    mounted(){
+      var _this = this;
+//      this.$nextTick();
+      setTimeout(function(){
+        _this.loading = false;
+      }, 2000);
     }
   }
 </script>
+
+<style scoped>
+  .mask {
+    position: fixed;
+    left: 0rem;
+    top: 0rem;
+    background: #999999;
+    opacity: 0.2;
+    width:100%;
+    height:100%;
+  }
+
+  .middle{
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+  }
+</style>

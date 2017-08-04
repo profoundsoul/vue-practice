@@ -17,6 +17,6 @@
 </script>
 <style scoped>
   .list{
-    color: 'red'
+    color: red;
   }
 </style>
