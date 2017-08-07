@@ -15,6 +15,7 @@ var routes = [
   {path: '/register', name: 'register', component: r=>require(['@/components/register'], r), meta: {requireAuth: true}},
   {path: '/index', name: 'index', component: r=>require(['@/components/index'], r), meta: {requireAuth: true}},
   {path: '/list', name: 'list', component: r=>require(['@/components/list'], r), meta: {requireAuth: true}},
+  {path: '/*', name: '*', component: r=>require(['@/components/notfound'], r)}
 ];
 
 
@@ -29,7 +30,7 @@ const router = new Router({
 router.beforeEach((to, from, next)=> {
   if (to.matched.some(r=>r.meta.requireAuth)) {
     //是否已经登录成功！
-    Vue.axios.get('/aaaaa').then((r)=>{
+    Vue.axios.post('/restapi/accounts/api/login/login').then((r)=>{
       console.log(r);
     }).catch(err=>{
       console.log(err);
