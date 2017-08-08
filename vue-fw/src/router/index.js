@@ -15,6 +15,7 @@ var routes = [
   {path: '/register', name: 'register', component: r=>require(['@/components/register'], r), meta: {requireAuth: true}},
   {path: '/index', name: 'index', component: r=>require(['@/components/index'], r), meta: {requireAuth: true}},
   {path: '/list', name: 'list', component: r=>require(['@/components/list'], r), meta: {requireAuth: true}},
+  {path: '/echart', name: 'echart', component: r=>require(['@/components/echarts'], r)}
 ];
 
 
