@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mutil Router</title>
+    <style>
+        .top {
+            min-height: 100px;
+            background: red;
+            border-bottom:1px solid green;
+        }
+        .bottom{
+            min-height: 600px;
+            overflow: hidden;
+        }
+        .left{
+            float:left;
+            width: 20%;
+        }
+        .center{
+            float:right;
+            width:80%;
+        }
+    </style>
+</head>
+<body>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+<div id="app">
+    <router-link to="/1">To 1</router-link>
+    <router-link to="/2">To 2</router-link>
+    <div class="top">
+        <router-view name="header"></router-view>
+    </div>
+    <div class="bottom">
+        <div class="left">
+            <router-view name="left"></router-view>
+        </div>
+        <div class="center">
+            <router-view  ></router-view>
+        </div>
+    </div>
+</div>
+<script>
+    var left1= {
+        template:`
+        <p>Left1</p>
+        `
+    };
+    var left2= {
+        template:`
+        <h1>Left2</h1>
+        `
+    };
+    var top1 = {
+        template:`
+            <menu>Menu1</menu>
+        `,
+        beforeRouteEnter:(to, from, next)=>{
+                console.log('22222');
+                next();
+            }
+    };
+    var center1 = {
+        template: `
+            <section>Center!</section>
+        `
+    };
+
+    var router = new VueRouter({
+        routes:[
+            {path: '/', redirect: '/1'},
+            {path: '/1', components:{header:top1,left:left1,default:center1},beforeEnter:function(to, from, next){console.log('1111111');next();}},
+            {path: '/2', components:{header:top1,left:left2,default:center1}, meta:{
+                    requireAuth:true
+            }}
+        ]
+    });
+    router.beforeEach((to, from, next)=>{
+        if(to.meta.requireAuth){
+        console.log('require Auth！！ ');
+    }
+
+        console.log(to, from, next);
+        next();
+    });
+
+    new Vue({
+        router:router
+    }).$mount('#app');
+</script>
+</body>
+</html>

@@ -31,8 +31,27 @@ module.exports = {
       mobile:{
         filter:'/mobile',
         target: 'http://10.250.160.64:91',
-        changeOrigin: true
+        changeOrigin: true,
+        router:{
+          'http://www.btiy.com':'http://localhost:8080'
+        },
+        onProxyRes:function(proxyRes, req, res){
+          proxyRes.headers['custom-add'] = 'this is test';
+        }
+      },
+      restapi:{
+        filter:'/restapi',
+        target:'http://www.yitb.com',
+        changeOrigin: true,
+        onProxyRes:function(proxyRes, req, res){
+          proxyRes.headers['custom-add'] = 'this is test';
+          proxyRes.headers['set-cookie'] = 'name=a,value=2,domain=localhost';
+        },
+        cookieDomainRewrite:{
+          'localhost':'localhost:8080'
+        }
       }
+
     },
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README

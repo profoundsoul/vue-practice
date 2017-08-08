@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue And
+        <Vue-router></Vue-router>
+    </title>
+</head>
+<body>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+<div id="app">
+    <h1>Hello App!</h1>
+    <p>
+        <!-- 使用 router-link 组件来导航. -->
+        <!-- 通过传入 `to` 属性指定链接. -->
+        <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
+        <router-link to="/foo">Go to Foo</router-link>
+        <router-link to="/bar">Go to Bar</router-link>
+        <router-link to="/user/linq">Go to linq</router-link>
+        <router-link to="/user/mandom">Go to mandom</router-link>
+    </p>
+    <!-- 路由出口 -->
+    <!-- 路由匹配到的组件将渲染在这里 -->
+    <router-view></router-view>
+</div>
+<script>
+    var foo = {
+        template:'<div>this is my foo!!!</div>'
+    };
+    var bar = {
+        template: '<div>this is my bar!!</div>'
+    };
+    var user = {
+        template: '<div>this is user / {{$route.params.id}}</div>',
+        watch:{
+            '$route':function(to, from){
+                debugger;
+                console.log(to, from, this.$route);
+            }
+        }
+    };
+    var router = new VueRouter({
+        routes:[{path: '/foo', component:foo},
+            {path:'/bar', component:bar},
+            {path: '/user/:id', component: user}
+        ]
+    });
+    new Vue({
+        router:router
+    }).$mount('#app');
+</script>
+</body>
+</html>
