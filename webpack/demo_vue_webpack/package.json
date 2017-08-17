@@ -4,7 +4,8 @@
   "description": "vue + webpack SPA",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --progress --host 0.0.0.0"
+    "start": "webpack-dev-server --progress --host 0.0.0.0",
+    "dev": "webpack-dev-server --progress --host 0.0.0.0"
   },
   "author": "linq",
   "license": "ISC",

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="main" style="width: 100%;height:500px;"></div>
+    <div id="main" style="width: 100%;height:120px;"></div>
   </div>
 </template>
 <script>
@@ -25,6 +25,18 @@
       data.push(123);
       data.push(92);
       data.push(118);
+//      data.push(118);
+//      data.push(118);
+//      data.push(118);
+//      data.push(118);
+//      data.push(118);
+//      data.push(118);
+//      data.push(92);
+//      data.push(118);
+//      data.push(92);
+//      data.push(118);
+//      data.push(118);
+//      data.push(118);
 
       var option = {
 //        tooltip: {
@@ -39,10 +51,18 @@
           show: false
         },
         legend: {
-          show: false
+          show: false,
+          padding:0
         },
         grid: {
-          show: false
+          show: false,
+          top: 0,
+          bottom: 0,
+          right: 0,
+          left: 0,
+          tooltip:{
+            show:false
+          }
         },
 //        toolbox: {
 //          feature: {
@@ -54,15 +74,20 @@
 //          }
 //        },
         xAxis: {
-          show: true,
+          show: false,
           type: 'category',
           boundaryGap: false,
-          data: date
+          axisTick:{
+            show:false
+          }
         },
         yAxis: {
-          show: true,
+          show: false,
           type: 'value',
-          boundaryGap: [0.2, 0.3]
+          boundaryGap: false,
+          axisTick:{
+            show:false
+          }
         },
 
         series: [
@@ -71,15 +96,37 @@
             type: 'line',
             smooth: true,
             sampling: 'average',
+//            symbol: 'rect',
+            symbolSize: 1,
+            showSymbol:true,
+            showAllSymbol:true,
+            label:{
+              normal:{
+                show:true,
+//                position: ['50%', '200%']
+                position:'bottom',
+                offset: [0,10],
+                formatter:function(params, a){
+//                  console.log(this,a)
+                  return params.data;
+                },
+                textStyle:{
+                  color: '#fff',
+                  fontSize:14
+                }
+              }
+            },
             itemStyle: {
               normal: {
                 borderWidth: 0,
-                opacity: 0
+                borderColor:'#000',
+                color: '#fff',
+                opacity: 1
               }
             },
             lineStyle: {
               normal: {
-                width: 0
+                width: 1
               }
             },
             areaStyle: {
@@ -115,7 +162,6 @@
       // 使用刚指定的配置项和数据显示图表。
       myChart.setOption(option);
 
-      debugger;
       this.chart = myChart;
     }
   }
