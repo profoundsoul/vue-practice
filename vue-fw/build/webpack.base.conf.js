@@ -3,6 +3,7 @@ var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
 
+require('es6-promise').polyfill()
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -15,8 +16,8 @@ module.exports = {
     path: config.build.assetsRoot,
     filename: '[name].js',
     publicPath: process.env.NODE_ENV === 'production'
-      ? config.build.assetsPublicPath
-      : config.dev.assetsPublicPath
+        ? config.build.assetsPublicPath
+        : config.dev.assetsPublicPath
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
@@ -35,7 +36,12 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('test')]
+        // include: [resolve('src'), resolve('test')],
+        exclude: /node_modules/,
+        // options: {
+        //   presets: ['env'],
+        //   plugins: ['transform-runtime']
+        // }
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -63,4 +69,4 @@ module.exports = {
       }
     ]
   }
-}
+};

@@ -9,10 +9,15 @@ var asyncComponent = (path)=> {
   // };
   return r=>require(['@/components/'+path], r);
 };
+
+import Login from '@/components/login'
+
+
 var routes = [
   {path: '/', name: 'default', component: Hello   },
-  {path: '/login', name: 'login', component: r=>require(['@/components/login'], r)},
-  {path: '/register', name: 'register', component: r=>require(['@/components/register'], r), meta: {requireAuth: true}},
+  {path: '/login', name: 'login', component: Login},
+  // {path: '/register', name: 'register', component: r=>require(['@/components/register'], r), meta: {requireAuth: true}},
+  {path: '/register', name: 'register', component: r=>require.ensure([], ()=>r(require('@/components/register')))},
   {path: '/index', name: 'index', component: r=>require(['@/components/index'], r), meta: {requireAuth: true}},
   {path: '/list', name: 'list', component: r=>require(['@/components/list'], r), meta: {requireAuth: true}},
   {path: '/echart', name: 'echart', component: r=>require(['@/components/echarts'], r)},
@@ -33,20 +38,20 @@ const router = new Router({
 router.beforeEach((to, from, next)=> {
   if (to.matched.some(r=>r.meta.requireAuth)) {
     //是否已经登录成功！
-    Vue.axios.post('/restapi/accounts/api/login/login').then((r)=>{
-      console.log(r);
-    }).catch(err=>{
-      console.log(err);
-    });
-
-    if (!document.cookie) {
-      next({
-        path: '/login',
-        query: {from: to.fullPath}
-      });
-    } else {
-      next();
-    }
+    // Vue.axios.post('/restapi/accounts/api/login/login').then((r)=>{
+    //   console.log(r);
+    // }).catch(err=>{
+    //   console.log(err);
+    // });
+next();
+  //   if (!document.cookie) {
+  //     next({
+  //       path: '/login',
+  //       query: {from: to.fullPath}
+  //     });
+  //   } else {
+  //     next();
+  //   }
   } else {
     next();
   }
