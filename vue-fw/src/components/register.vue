@@ -6,6 +6,7 @@
       <label >用户名：</label>
       <input type="text" v-model="username">
     </div>
+    <mySync></mySync>
   </div>
 </template>
 <script>
@@ -16,6 +17,9 @@
         pwd:'',
         repwd:''
       }
+    },
+    components:{
+      'mySync':()=>import('@/common/ui/myasyncpage')
     }
   }
 </script>
