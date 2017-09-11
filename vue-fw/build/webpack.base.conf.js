@@ -38,13 +38,27 @@ module.exports = {
             {
                 test: /\.js$/,
                 loader: 'babel-loader',
-                include: [resolve('src'), resolve('test'), resolve('node_modules/muse-ui/src')],
+                // include: [resolve('src'), resolve('test')],
+                exclude: /node_modules/,
+                // options: {
+                //   presets: ['env'],
+                //   plugins: ['transform-runtime']
+                // }
+            },
+            {
+                test: /\.csv$/,
+                loader: 'csv-loader',
+                options: {
+                    dynamicTyping: true,
+                    header: true,
+                    skipEmptyLines: true
+                }
             },
             {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
                 loader: 'url-loader',
                 options: {
-                    limit: 10000,
+                    limit: 1536,
                     name: utils.assetsPath('img/[name].[hash:7].[ext]')
                 }
             },
@@ -66,4 +80,4 @@ module.exports = {
             }
         ]
     }
-};
+}

@@ -24,6 +24,8 @@ var routes = [
   {path: '/erts', name: 'erts', component: r=>require(['@/components/erts'], r)},
   {path: '/bars', name: 'bars', component: r=>require(['@/components/bars'], r)},
   {path: '/glo', name: 'glo', component: r=>require(['@/components/glodemo'], r)},
+  {path: '/d3/pie', name: 'd3-pie', component: r=>require(['@/components/d3/pie'], r)},
+  {path: '/d3/asterpie', name: 'asterpie', component: r=>require(['@/components/d3/asterpie'], r)},
   {path: '/*', name: '*', component: r=>require(['@/components/notfound'], r)}
 ];
 

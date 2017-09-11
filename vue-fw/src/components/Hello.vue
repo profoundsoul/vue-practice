@@ -13,6 +13,12 @@
     <br>
     <router-link to="/glo">To Glo Demo</router-link>
     <br>
+    <fieldset>
+      <legend>D3</legend>
+      <router-link to="/d3/pie">D3 Pie</router-link>
+      <br>
+      <router-link to="/d3/asterpie">D3 Aster Pie</router-link>
+    </fieldset>
   </div>
 </template>
 
