@@ -23,6 +23,7 @@ var routes = [
   {path: '/echart', name: 'echart', component: r=>require(['@/components/echarts'], r)},
   {path: '/erts', name: 'erts', component: r=>require(['@/components/erts'], r)},
   {path: '/bars', name: 'bars', component: r=>require(['@/components/bars'], r)},
+  {path: '/glo', name: 'glo', component: r=>require(['@/components/glodemo'], r)},
   {path: '/*', name: '*', component: r=>require(['@/components/notfound'], r)}
 ];
 

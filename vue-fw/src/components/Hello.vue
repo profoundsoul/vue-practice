@@ -11,6 +11,8 @@
     <br>
     <router-link to="/List">To List</router-link>
     <br>
+    <router-link to="/glo">To Glo Demo</router-link>
+    <br>
   </div>
 </template>
 
