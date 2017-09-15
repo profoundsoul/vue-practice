@@ -10,12 +10,10 @@ var asyncComponent = (path)=> {
   return r=>require(['@/components/'+path], r);
 };
 
-import Login from '@/components/login'
-
 
 var routes = [
   {path: '/', name: 'default', component: Hello   },
-  {path: '/login', name: 'login', component: Login},
+  {path: '/login', name: 'login', component: r=>require.ensure([], ()=>r(require('@/components/login')))},
   // {path: '/register', name: 'register', component: r=>require(['@/components/register'], r), meta: {requireAuth: true}},
   {path: '/register', name: 'register', component: r=>require.ensure([], ()=>r(require('@/components/register')))},
   {path: '/index', name: 'index', component: r=>require(['@/components/index'], r), meta: {requireAuth: true}},
@@ -26,6 +24,7 @@ var routes = [
   {path: '/glo', name: 'glo', component: r=>require(['@/components/glodemo'], r)},
   {path: '/d3/pie', name: 'd3-pie', component: r=>require(['@/components/d3/pie'], r)},
   {path: '/d3/asterpie', name: 'asterpie', component: r=>require(['@/components/d3/asterpie'], r)},
+  {path: '/d3/tran', name: 'tran', component: r=>require(['@/components/d3/tran'], r)},
   {path: '/*', name: '*', component: r=>require(['@/components/notfound'], r)}
 ];
 

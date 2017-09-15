@@ -36,14 +36,14 @@ module.exports = {
                 options: vueLoaderConfig
             },
             {
+                test: /muse-ui.src.*?js$/,
+                loader: 'babel-loader?cacheDirectory'
+            },
+            {
                 test: /\.js$/,
-                loader: 'babel-loader',
-                // include: [resolve('src'), resolve('test')],
-                exclude: /node_modules/,
-                // options: {
-                //   presets: ['env'],
-                //   plugins: ['transform-runtime']
-                // }
+                loader: 'babel-loader?cacheDirectory',
+                include: [resolve('src'), resolve('test')],
+                // exclude: /node_modules/
             },
             {
                 test: /\.csv$/,
@@ -51,7 +51,8 @@ module.exports = {
                 options: {
                     dynamicTyping: true,
                     header: true,
-                    skipEmptyLines: true
+                    skipEmptyLines: true,
+                    skipinitialspace: true
                 }
             },
             {

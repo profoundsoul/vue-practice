@@ -8,7 +8,8 @@
 </template>
 
 <script>
-export default {
+    import './assets/global.css'
+  export default {
   name: 'app',
   data(){
     return {
@@ -31,7 +32,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s ease;

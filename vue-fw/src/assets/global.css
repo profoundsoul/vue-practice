@@ -1,0 +1,264 @@
+html {
+    font-size: 50px
+}
+
+body {
+    font-size: 24px
+}
+
+@media screen and (min-width: 320px) {
+    html {
+        font-size:21.33px
+    }
+
+    body {
+        font-size: 12px
+    }
+}
+
+@media screen and (min-width: 360px) {
+    html {
+        font-size:24px
+    }
+
+    body {
+        font-size: 12px
+    }
+}
+
+@media screen and (min-width: 375px) {
+    html {
+        font-size:25px
+    }
+
+    body {
+        font-size: 12px
+    }
+}
+
+@media screen and (min-width: 384px) {
+    html {
+        font-size:25.6px
+    }
+
+    body {
+        font-size: 14px
+    }
+}
+
+@media screen and (min-width: 400px) {
+    html {
+        font-size:26.67px
+    }
+
+    body {
+        font-size: 14px
+    }
+}
+
+@media screen and (min-width: 414px) {
+    html {
+        font-size:27.6px
+    }
+
+    body {
+        font-size: 14px
+    }
+}
+
+@media screen and (min-width: 424px) {
+    html {
+        font-size:28.27px
+    }
+
+    body {
+        font-size: 14px
+    }
+}
+
+@media screen and (min-width: 480px) {
+    html {
+        font-size:32px
+    }
+
+    body {
+        font-size: 15.36px
+    }
+}
+
+@media screen and (min-width: 540px) {
+    html {
+        font-size:36px
+    }
+
+    body {
+        font-size: 17.28px
+    }
+}
+
+@media screen and (min-width: 720px) {
+    html {
+        font-size:48px
+    }
+
+    body {
+        font-size: 23.04px
+    }
+}
+
+@media screen and (min-width: 750px) {
+    html {
+        font-size:50px
+    }
+
+    body {
+        font-size: 24px
+    }
+}
+/*normalize the font size in multiple device*/
+@media screen and (min-width:320px){
+    html {
+      font-size:21.33px
+    }
+    body {
+      font-size: 12px
+    }
+
+}
+@media screen and (min-width:360px){
+    html {
+      font-size:24px
+    }
+
+    body {
+      font-size: 12px
+    }
+
+}
+@media screen and (min-width:375px){
+  html {
+    font-size:25px
+  }
+
+  body {
+    font-size: 12px
+  }
+}
+@media screen and (min-width: 384px) {
+    html {
+      font-size:25.6px
+    }
+
+    body {
+      font-size: 14px
+    }
+}
+@media screen and (min-width: 400px) {
+    html {
+      font-size:26.67px
+    }
+
+    body {
+      font-size: 14px
+    }
+}
+@media screen and (min-width:414px){
+    html {
+      font-size:27.6px
+    }
+
+    body {
+      font-size: 14px
+    }
+
+}
+@media screen and (min-width: 480px) {
+  html {
+    font-size:32px
+  }
+
+  body {
+    font-size: 15.36px
+  }
+}
+@media screen and (min-width:540px){
+    html {
+      font-size:36px
+    }
+
+    body {
+      font-size: 17.28px
+    }
+
+}
+@media screen and (min-width: 720px) {
+    html {
+      font-size:48px
+    }
+
+    body {
+      font-size: 23.04px
+    }
+
+}
+
+p,ul,li,body{
+  padding:0;
+  margin:0;
+}
+ul,li{
+  list-style: none;
+}
+em,i,h1,h2,h3,h4,h5,h6{
+  font-style:normal;
+  padding:0;
+  margin:0;
+}
+a{
+  text-decoration:none;
+  color:#000;
+}
+textarea{
+  outline: none;
+}
+img, input, textarea, input[type="button"], select{
+    resize: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+}
+.mask-layer{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: transparent
+}
+
+.mu-popup-middle{
+    font-family: "San Francisco",Arial,sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 15rem;
+    min-width: 6rem;
+    font-size: 0.56rem;
+    top: 45% !important;
+    color: #ffffff !important;
+    background-color: #333333 !important;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    border: solid 0.05rem #CCC;
+    padding: 0.48rem 1rem;
+    text-align: center;
+    border-radius: 0.2rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.15);
+}
+
+.mu-popup-middle p{
+    font-size: 0.6rem;
+    color: #fff;
+    line-height: 0.8rem;
+    text-align: center;
+}
