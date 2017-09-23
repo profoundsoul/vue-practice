@@ -4,11 +4,17 @@
       "modules": false,
       "targets": {
         "browsers": ["> 1%", "last 2 versions", "not ie <= 8", "not chrome <=38"]
-      }
+      },
+      "debug":true
     }],
     "stage-2"
   ],
-  "plugins": ["transform-runtime"],
+  "plugins": ["transform-runtime",[
+      "component",{
+        "libraryName": "element-ui",
+        "styleLibraryName": "~src/assets/el-theme"
+      }]
+  ],
   "env": {
     "test": {
       "presets": ["env", "stage-2"],
