@@ -19,6 +19,10 @@
       <br>
       <router-link to="/d3/asterpie">D3 Aster Pie</router-link>
     </fieldset>
+    <fieldset>
+      <legend>element-ui</legend>
+      <router-link to="/element/date">date-default</router-link>
+    </fieldset>
   </div>
 </template>
 
@@ -50,6 +54,7 @@ li {
 }
 
 a {
+  margin: auto 10px;
   color: #42b983;
 }
 </style>

@@ -6,9 +6,17 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import router from './router'
 import FastClick from 'fastclick';
+import {DatePicker,Row,Col} from 'element-ui'
+// import ElementUI from 'element-ui'
+// import 'element-ui/lib/theme-default/index.css'
+// import '@/assets/el-theme/index.css'
 
 import '@/polyfill/es6promise';
 
+// Vue.use(ElementUI)
+Vue.use(DatePicker)
+Vue.use(Row)
+Vue.use(Col)
 Vue.config.productionTip = false;
 Vue.use(VueAxios, axios);
 
