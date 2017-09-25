@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <!--<img src="./assets/logo.png">-->
+    <img src="./assets/logo.png">
     <transition :name="transition" mode="out-in">
       <router-view class="child-view"></router-view>
     </transition>

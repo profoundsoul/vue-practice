@@ -57,6 +57,27 @@ module.exports = {
             },
             {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+                loader: 'image-webpack-loader',
+                options: {
+                    mozjpeg: {
+                        quality: 65
+                    },
+                    pngquant: {
+                        quality: "65-90",
+                        speed: 4
+                    },
+                    gifsicle: {
+                        optimizationLevel: 7,
+                        interlaced: false
+                    },
+                    optipng: {
+                        optimizationLevel: 7,
+                        interlaced: false
+                    }
+                }
+            },
+            {
+                test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
                 loader: 'url-loader',
                 options: {
                     limit: 1536,
