@@ -12,10 +12,10 @@ var asyncComponent = (path)=> {
 
 
 var routes = [
-  {path: '/', name: 'default', component: Hello   },
-  {path: '/login', name: 'login', component: r=>require.ensure([], ()=>r(require('@/components/login')))},
+  {path: '/', name: 'default', component: Hello, meta:{keepAlive:true}},
+  {path: '/login', name: 'login', component: r=>require.ensure([], ()=>r(require('@/components/login'))), meta:{keepAlive:true}},
   // {path: '/register', name: 'register', component: r=>require(['@/components/register'], r), meta: {requireAuth: true}},
-  {path: '/register', name: 'register', component: r=>require.ensure([], ()=>r(require('@/components/register')))},
+  {path: '/register', name: 'register', component: r=>require.ensure([], ()=>r(require('@/components/register'))),meta:{keepAlive:true}},
   {path: '/index', name: 'index', component: r=>require(['@/components/index'], r), meta: {requireAuth: true}},
   {path: '/list', name: 'list', component: r=>require(['@/components/list'], r), meta: {requireAuth: true}},
   {path: '/echart', name: 'echart', component: r=>require(['@/components/echarts'], r)},

@@ -9,6 +9,7 @@
     import * as helper from '@/common/myhelper'
 
     export default {
+        name:'login',
         data() {
             return {
                 username: '',

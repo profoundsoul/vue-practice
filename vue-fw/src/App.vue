@@ -1,11 +1,12 @@
 <template>
     <div id="app">
         <img src="./assets/logo.png">
-        <transition :name="transition" mode="out-in">
-            <keep-alive>
-                <router-view class="child-view"></router-view>
-            </keep-alive>
-        </transition>
+        <!--<transition :name="transition" mode="out-in">-->
+        <keep-alive>
+            <router-view v-if="$route.meta.keepAlive" class="child-view"></router-view>
+        </keep-alive>
+        <router-view v-if="!$route.meta.keepAlive" class="child-view"></router-view>
+        <!--</transition>-->
     </div>
 </template>
 
@@ -16,12 +17,22 @@
         name: 'app',
         data() {
             return {
-                transition: 'fade'
+                transition: 'fade',
+                includeView: [],
+                excludeView: ''
             }
+        },
+        mounted() {
+            //新增Include KeepAlive Views
+//            this.includeView.push('1434')
+
+            //新增Exclude KeepAlive Views
+//            this.excludeView.push();
         },
         watch: {
             '$route'() {
                 console.log('11111');
+                console.log(this.$route.meta);
                 this.transition = this.transition == 'slide-left' ? 'slide-right' : 'slide-left';
             }
         }

@@ -11,25 +11,26 @@
   </div>
 </template>
 <script>
-  export default{
-    data(){
-      return {
-        username:'',
-        pwd:'',
-        repwd:''
-      }
-    },
-    components:{
-      'mySync':()=>import('@/common/ui/myasyncpage')
-    },
-      created() {
-          console.log('exec created!');
-      },
-      mounted() {
-          console.log('exec mounted!');
-      },
-      updated() {
-          console.log('exec updated!');
-      }
-  }
+    export default {
+        name:'register',
+        data() {
+            return {
+                username: '',
+                pwd: '',
+                repwd: ''
+            }
+        },
+        components: {
+            'mySync': () => import('@/common/ui/myasyncpage')
+        },
+        created() {
+            console.log('exec created!');
+        },
+        mounted() {
+            console.log('exec mounted!');
+        },
+        updated() {
+            console.log('exec updated!');
+        }
+    };
 </script>
