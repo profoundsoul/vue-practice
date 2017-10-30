@@ -7,6 +7,9 @@ import VueAxios from 'vue-axios'
 import router from './router'
 import FastClick from 'fastclick';
 import {DatePicker,Row,Col} from 'element-ui'
+import SingleProgress from '@/common/singleprogressbar'
+
+
 // import ElementUI from 'element-ui'
 // import 'element-ui/lib/theme-default/index.css'
 // import '@/assets/el-theme/index.css'
@@ -22,6 +25,10 @@ Vue.use(VueAxios, axios);
 
 // console.log(33333333333333);
 FastClick.attach(document.body);
+SingleProgress.start();
+
+
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

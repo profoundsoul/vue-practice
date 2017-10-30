@@ -7,6 +7,7 @@
     </div>
 </template>
 <script type="text/ecmascript-6">
+    import SingleProgress from '@/common/singleprogressbar'
     export default {
         data(){
             return {
@@ -26,9 +27,13 @@
         beforeRouterEnter(to, from, next){
             next();
         },
+        created() {
+            SingleProgress.start();
+        },
         mounted(){
             setTimeout(()=> {
                 this.showlist = true;
+                SingleProgress.complete();
             }, 2000);
         },
         components: {

@@ -1,39 +1,46 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <br>
-    <router-link to="/login">To Login</router-link>
-    <br>
-    <router-link to="/register">To Register</router-link>
-    <br>
-    <router-link to="/Index">To Index</router-link>
-    <br>
-    <router-link to="/List">To List</router-link>
-    <br>
-    <router-link to="/glo">To Glo Demo</router-link>
-    <br>
+    <fieldset>
+      <legend>Regular</legend>
+      <router-link to="/login">To Login</router-link>
+      <router-link to="/register">To Register</router-link>
+      <router-link to="/Index">To Index</router-link>
+      <router-link to="/List">To List</router-link>
+      <router-link to="/glo">To Glo Demo</router-link>
+    </fieldset>
     <fieldset>
       <legend>D3</legend>
       <router-link to="/d3/pie">D3 Pie</router-link>
-      <br>
       <router-link to="/d3/asterpie">D3 Aster Pie</router-link>
     </fieldset>
     <fieldset>
       <legend>element-ui</legend>
       <router-link to="/element/date">date-default</router-link>
     </fieldset>
+    <fieldset>
+      <legend>Transitions</legend>
+      <router-link to="/transitions/class">ClassName</router-link>
+      <router-link to="/transitions/customclass">CustomClass</router-link>
+    </fieldset>
   </div>
 </template>
 
 <script>
+  import SingleProgress from '@/common/singleprogressbar'
 export default {
   name: 'hello',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: ''
     }
-  }
+  },
+    mounted() {
+        setTimeout(function(){
+            console.log(1111);
+            SingleProgress.complete()
+        },20000)
+    }
 }
 </script>
 
@@ -41,6 +48,9 @@ export default {
 <style scoped>
 h1, h2 {
   font-weight: normal;
+}
+fieldset{
+  margin-top:5px;
 }
 
 ul {

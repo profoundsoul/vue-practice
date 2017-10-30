@@ -25,9 +25,19 @@ var routes = [
   {path: '/d3/pie', name: 'd3-pie', component: r=>require(['@/components/d3/pie'], r)},
   {path: '/d3/asterpie', name: 'asterpie', component: r=>require(['@/components/d3/asterpie'], r)},
   {path: '/d3/tran', name: 'tran', component: r=>require(['@/components/d3/tran'], r)},
-  {path: '/element/date', name: 'date', component: r=>require(['@/components/element/date'], r)},
-  {path: '/*', name: '*', component: r=>require(['@/components/notfound'], r)}
+
 ];
+
+routes=routes.concat([
+    {path: '/element/date', name: 'date', component: r=>require(['@/components/element/date'], r)},
+])
+
+routes=routes.concat([
+    {path: '/transitions/class', name: 'class', component: r=>require(['@/components/transitions/class'], r)},
+    {path: '/transitions/customclass', name: 'customclass', component: r=>require(['@/components/transitions/customclass'], r)},
+])
+
+routes.push({path: '/*', name: '*', component: r=>require(['@/components/notfound'], r)})
 
 
 const router = new Router({
