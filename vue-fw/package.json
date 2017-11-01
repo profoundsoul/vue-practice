@@ -52,6 +52,7 @@
     "css-loader": "^0.28.0",
     "cssnano": "^3.10.0",
     "csv-loader": "^2.1.1",
+    "es6-promise": "^4.1.1",
     "eventsource-polyfill": "^0.9.6",
     "express": "^4.14.1",
     "extract-text-webpack-plugin": "^2.0.0",
@@ -79,6 +80,9 @@
     "optimize-css-assets-webpack-plugin": "^2.0.0",
     "ora": "^1.2.0",
     "phantomjs-prebuilt": "^2.1.14",
+    "postcss": "^6.0.13",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-unprefix": "^2.1.1",
     "rimraf": "^2.6.0",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
@@ -99,8 +103,7 @@
     "npm": ">= 3.0.0"
   },
   "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
+    "> 0.01%",
+    "last 2 versions"
   ]
 }

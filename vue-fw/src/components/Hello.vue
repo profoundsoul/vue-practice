@@ -51,6 +51,11 @@ h1, h2 {
 }
 fieldset{
   margin-top:5px;
+  border-radius: 10px;
+  display: -moz-flex;
+  -webkit-transition: all .5s;
+  -moz-user-select: none;
+  background: linear-gradient(to bottom, white, black);
 }
 
 ul {

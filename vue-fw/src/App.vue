@@ -33,6 +33,7 @@
             '$route'() {
                 console.log('11111');
                 console.log(this.$route.meta);
+                console.log(this.$router)
                 this.transition = this.transition == 'slide-left' ? 'slide-right' : 'slide-left';
             }
         }
