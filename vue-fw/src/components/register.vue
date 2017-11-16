@@ -28,7 +28,6 @@
         },
         mounted() {
             console.log('exec mounted!');
-            debugger;
         },
         updated() {
             console.log('exec updated!');

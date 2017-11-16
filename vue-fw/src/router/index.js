@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
+import Hello from '@/components/Hello-a'
 
 Vue.use(Router);
 
@@ -57,6 +57,14 @@ routes = routes.concat([
 
 routes.push({path: '/*', name: '*', component: r => require(['@/components/notfound'], r)})
 
+/**********************为了测试使用，暂时先删除keepAlive**************************************/
+// routes.forEach(item=>{
+//     if(item.meta && item.meta.keepAlive) {
+//         delete item.meta.keepAlive;
+//     }
+// })
+// console.log(routes)
+/********************************************完了********************************************/
 
 const router = new Router({
         routes,

@@ -10,6 +10,7 @@
     "build": "node build/build.js",
     "report": "npm run build --report",
     "imagemin": "npm run build --imagemin",
+    "dll": "webpack --config build/dll.config.js --progress",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "test": "npm run unit"
   },
@@ -24,6 +25,7 @@
     "echarts": "^3.6.2",
     "element-ui": "^1.4.4",
     "fastclick": "^1.0.6",
+    "html5-history-api": "^4.2.8",
     "muse-ui": "^2.1.0",
     "progressbar.js": "^1.0.1",
     "query-string": "^5.0.0",
@@ -31,9 +33,11 @@
     "vue-axios": "^2.0.2",
     "vue-chartjs": "^2.8.1",
     "vue-router": "^2.6.0",
-    "vue-spinner": "^1.0.2"
+    "vue-spinner": "^1.0.2",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
+    "add-asset-html-webpack-plugin": "^2.1.2",
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.22.1",
     "babel-loader": "^7.1.1",
@@ -79,6 +83,7 @@
     "opn": "^5.1.0",
     "optimize-css-assets-webpack-plugin": "^2.0.0",
     "ora": "^1.2.0",
+    "os": "^0.1.1",
     "phantomjs-prebuilt": "^2.1.14",
     "postcss": "^6.0.13",
     "postcss-cssnext": "^3.0.2",
@@ -96,7 +101,8 @@
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-middleware": "^1.10.0",
     "webpack-hot-middleware": "^2.18.0",
-    "webpack-merge": "^4.1.0"
+    "webpack-merge": "^4.1.0",
+    "webpack-uglify-parallel": "^0.1.4"
   },
   "engines": {
     "node": ">= 4.0.0",

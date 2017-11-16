@@ -1,4 +1,5 @@
 var utils = require('./utils')
+var path = require('path')
 var webpack = require('webpack')
 var config = require('../config')
 var merge = require('webpack-merge')
@@ -7,6 +8,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 var FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
+var AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin')
 
 // add hot-reload related code to entry chunks
 Object.keys(baseWebpackConfig.entry).forEach(function (name) {
@@ -23,6 +25,10 @@ module.exports = merge(baseWebpackConfig, {
     new webpack.DefinePlugin({
       'process.env': config.dev.env
     }),
+    // new webpack.DllReferencePlugin({
+    //     context: path.join(__dirname, '../'),
+    //     manifest: require('../dlldist/vendor-manifest.json'),
+    // }),
     new webpack.NormalModuleReplacementPlugin(/element-ui[\/\\]lib[\/\\]locale[\/\\]lang[\/\\]zh-CN/, 'element-ui/lib/locale/lang/en'),
     // https://github.com/glenjamin/webpack-hot-middleware#installation--usage
     new webpack.HotModuleReplacementPlugin(),
@@ -33,6 +39,12 @@ module.exports = merge(baseWebpackConfig, {
       template: 'index.html',
       inject: true
     }),
+      // new AddAssetHtmlPlugin({
+      //     filepath: path.resolve(__dirname, "./../dlldist/vendor.dll.js"),
+      //     hash: true,
+      //     includeSourcemap:false
+      // }),
+
     new FriendlyErrorsPlugin()
   ]
 })

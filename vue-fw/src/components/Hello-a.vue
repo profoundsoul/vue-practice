@@ -3,25 +3,25 @@
     <h1>{{ msg }}</h1>
     <fieldset>
       <legend>Regular</legend>
-      <router-link to="/login">To Login</router-link>
-      <router-link to="/register">To Register</router-link>
-      <router-link to="/Index">To Index</router-link>
-      <router-link to="/List">To List</router-link>
-      <router-link to="/glo">To Glo Demo</router-link>
+      <a href="#/login">To Login</a>
+      <a href="#/register">To Register</a>
+      <a href="#/Index">To Index</a>
+      <a href="#/List">To List</a>
+      <a href="#/glo">To Glo Demo</a>
     </fieldset>
     <fieldset>
       <legend>D3</legend>
-      <router-link to="/d3/pie">D3 Pie</router-link>
-      <router-link to="/d3/asterpie">D3 Aster Pie</router-link>
+      <a href="#/d3/pie">D3 Pie</a>
+      <a href="#/d3/asterpie">D3 Aster Pie</a>
     </fieldset>
     <fieldset>
       <legend>element-ui</legend>
-      <router-link to="/element/date">date-default</router-link>
+      <a href="#/element/date">date-default</a>
     </fieldset>
     <fieldset>
       <legend>Transitions</legend>
-      <router-link to="/transitions/class">ClassName</router-link>
-      <router-link to="/transitions/customclass">CustomClass</router-link>
+      <a href="#/transitions/class">ClassName</a>
+      <a href="#/transitions/customclass">CustomClass</a>
     </fieldset>
   </div>
 </template>
@@ -32,14 +32,17 @@ export default {
   name: 'hello',
   data () {
     return {
-      msg: ''
+      msg: '',
+        info:{
+          aa:11
+        }
     }
   },
     mounted() {
         setTimeout(function(){
             console.log(1111);
             SingleProgress.complete()
-        },20000)
+        },10000)
     }
 }
 </script>
