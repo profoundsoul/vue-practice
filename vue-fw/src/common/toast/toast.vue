@@ -11,6 +11,9 @@
         },
         data() {
             return {};
+        },
+        mounted() {
+            console.log(this.$route, this.$router, '----------------')
         }
     };
 </script>

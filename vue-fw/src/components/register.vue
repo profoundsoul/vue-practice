@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <h1>欢迎来到注册页面！</h1>
     <div>
 
@@ -34,3 +34,8 @@
         }
     };
 </script>
+<style scoped>
+  .container{
+    background: yellow;
+  }
+</style>

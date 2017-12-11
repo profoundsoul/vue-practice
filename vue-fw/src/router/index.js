@@ -18,7 +18,11 @@ var routes = [
         path: '/login',
         name: 'login',
         component: r => require.ensure([], () => r(require('@/components/login'))),
-        meta: {keepAlive: true}
+        meta: {keepAlive: true},
+        beforeEnter(to, from, next){
+            console.log('before Enter routers --------------', +new Date);
+            next();
+        }
     },
     // {path: '/register', name: 'register', component: r=>require(['@/components/register'], r), meta: {requireAuth: true}},
     {
